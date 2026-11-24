@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brasa Alta — hambúrgueres artesanais, acompanhamentos e sobremesas para pedir online.">
+  <title>Brasa Alta — Hambúrgueres artesanais</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="engagement.css">
+</head>
+<body>
+  <div class="announcement">Entrega grátis em pedidos acima de R$ 80 <span>•</span> Todos os dias, 11h às 23h</div>
+  <header class="site-header" id="topo">
+    <a class="brand" href="#topo" aria-label="Brasa Alta, início">
+      <span class="brand-mark">BA</span>
+      <span class="brand-name">BRASA ALTA</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#cardapio">Cardápio</a>
+      <a href="#destaques">Destaques</a>
+      <a href="#historia">Nossa cozinha</a>
+      <a href="#entrega">Entrega</a>
+    </nav>
+    <div class="header-actions">
+      <button class="engage-button" id="messagesToggle">Mensagens <span id="messageCount"></span></button>
+      <button class="icon-button" id="searchToggle" aria-label="Abrir busca" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+      </button>
+      <button class="cart-button" id="cartToggle" aria-label="Abrir carrinho">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h2l2 10h9l2-7H7"></path><circle cx="9" cy="19" r="1"></circle><circle cx="17" cy="19" r="1"></circle></svg>
+        <span>Carrinho</span><b id="cartCount">0</b>
+      </button>
+      <button class="menu-button" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+    <div class="search-panel" id="searchPanel">
+      <label for="searchInput">O que você quer comer?</label>
+      <div class="search-line">
+        <input id="searchInput" type="search" placeholder="Busque por hambúrguer, batata, sobremesa..." autocomplete="off">
+        <button id="searchClose" aria-label="Fechar busca">Fechar</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="heroTitle">
+      <img src="assets/hero-burger.png" alt="Hambúrguer duplo com cheddar e cebola caramelizada" fetchpriority="high">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Feito no fogo. Servido sem pressa.</p>
+        <h1 id="heroTitle">O sabor<br>começa na brasa.</h1>
+        <p class="hero-copy">Carne alta, pão dourado e ingredientes de verdade. Seu novo hambúrguer favorito está a poucos cliques.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#cardapio">Ver cardápio</a>
+          <button class="button button-ghost" data-add="Brasa Duplo">Pedir o destaque</button>
+        </div>
+      </div>
+      <div class="hero-side-note"><span>Desde 2014</span><span>Receita própria</span></div>
+    </section>
+
+    <div id="heroCampaigns" class="campaign-area"></div>
+    <section class="category-strip" id="cardapio" aria-labelledby="categoryTitle">
+      <div>
+        <p class="eyebrow dark">Escolha seu momento</p>
+        <h2 id="categoryTitle">Nosso cardápio</h2>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar cardápio">
+        <button class="filter active" data-filter="todos">Todos</button>
+        <button class="filter" data-filter="burger">Hambúrgueres</button>
+        <button class="filter" data-filter="acompanhamento">Acompanhamentos</button>
+        <button class="filter" data-filter="bebida">Bebidas</button>
+        <button class="filter" data-filter="sobremesa">Sobremesas</button>
+      </div>
+    </section>
+
+    <section class="products-section" id="destaques" aria-live="polite">
+      <div class="section-heading">
+        <h2>Mais pedidos</h2>
+        <p>Receitas que já viraram tradição por aqui.</p>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>Nenhum item encontrado. Tente outra busca.</p>
+    </section>
+
+    <div id="menuCampaigns" class="campaign-area"></div>
+    <section class="story" id="historia">
+      <div class="story-image" role="img" aria-label="Detalhe de hambúrguer preparado na casa"></div>
+      <div class="story-copy">
+        <p class="eyebrow">Nossa cozinha</p>
+        <h2>Simples.<br>Bem feito.<br>Inesquecível.</h2>
+        <p>A gente acredita que o melhor hambúrguer nasce de escolhas honestas: carne fresca moída na casa, pão de fermentação lenta e fogo no ponto certo.</p>
+        <div class="story-stats">
+          <div><strong>100%</strong><span>carne fresca</span></div>
+          <div><strong>48h</strong><span>de fermentação</span></div>
+          <div><strong>0</strong><span>atalhos</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits" id="entrega" aria-labelledby="benefitsTitle">
+      <p class="eyebrow dark">Pedir na Brasa Alta</p>
+      <h2 id="benefitsTitle">Da nossa grelha para a sua mesa.</h2>
+      <div class="benefit-grid">
+        <article><span>01</span><h3>Entrega cuidadosa</h3><p>Embalagem térmica e montagem pensada para chegar bonito e quente.</p></article>
+        <article><span>02</span><h3>Retire sem fila</h3><p>Faça seu pedido online e escolha a retirada no balcão.</p></article>
+        <article><span>03</span><h3>Ingredientes de verdade</h3><p>Produção diária, fornecedores locais e receitas preparadas na casa.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand"><span class="brand-mark">BA</span><h2>BRASA ALTA</h2><p>Hambúrgueres artesanais<br>feitos para marcar.</p></div>
+    <div><h3>Cardápio</h3><a href="#cardapio">Hambúrgueres</a><a href="#cardapio">Acompanhamentos</a><a href="#cardapio">Bebidas</a><a href="#cardapio">Sobremesas</a></div>
+    <div><h3>Atendimento</h3><a href="#entrega">Entrega e retirada</a><a href="#">Fale conosco</a><a href="#">Alergênicos</a><a href="#">Política de privacidade</a></div>
+    <div class="newsletter"><h3>Novidades da casa</h3><p>Receba lançamentos e ofertas.</p><form id="newsletterForm"><input type="email" required placeholder="seu@email.com" aria-label="Seu e-mail"><button type="submit">Assinar</button></form><small id="newsletterStatus"></small></div>
+    <div class="footer-bottom"><span>© 2026 Brasa Alta. Projeto demonstrativo.</span><nav aria-label="Ferramentas de demonstração"><a href="operations.html">Engagement Studio</a><a href="verify/index.html">Verification Console</a></nav></div>
+  </footer>
+
+  <div class="backdrop" id="backdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Seu carrinho" aria-hidden="true">
+    <div class="cart-header"><div><p class="eyebrow dark">Seu pedido</p><h2>Carrinho</h2></div><button id="cartClose" aria-label="Fechar carrinho">Fechar</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div id="cartCampaigns"></div>
+    <div class="cart-empty" id="cartEmpty"><span>BA</span><h3>Seu carrinho está vazio</h3><p>Escolha um dos favoritos da casa para começar.</p></div>
+    <div class="cart-summary"><div><span>Subtotal</span><strong id="cartSubtotal">R$ 0,00</strong></div><p>Taxa de entrega calculada no checkout.</p><button class="button button-dark" id="checkoutButton">Continuar pedido</button></div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="engage-dialog" id="engageDialog" aria-labelledby="dialogTitle"></dialog>
+  <div id="floatingCampaigns"></div>
+  <script src="campaign-data.js"></script>
+  <script src="app.js"></script>
+  <script src="store-engagement.js"></script>
+</body>
+</html>

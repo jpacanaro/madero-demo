@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Engagement Studio | Brasa Alta</title>
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="engagement.css">
+</head>
+<body class="ops">
+  <header class="ops-header"><a href="index.html">BRASA ALTA</a><nav><a href="#experiencias">Experiências</a><a href="verify/index.html">Verification Console</a></nav></header>
+  <main class="ops-main">
+    <div class="ops-intro"><p class="eyebrow">Ferramentas de demonstração</p><h1>Engagement Studio</h1><p>Configure um perfil, simule comunicações e veja como as campanhas aparecem na loja.</p></div>
+    <div class="ops-grid">
+      <section class="ops-card">
+        <h2>Perfil e canais</h2>
+        <form id="profileForm" class="campaign-form">
+          <label>Chave de contato <input name="contact" required maxlength="60" pattern="[A-Za-z0-9][A-Za-z0-9_.\-]*" placeholder="BRASA-DEMO-01"></label>
+          <label>Cidade do perfil <select name="city"><option>São Paulo</option><option>Curitiba</option><option>Rio de Janeiro</option><option>Belo Horizonte</option></select></label>
+          <button class="engage-button">Vincular este navegador</button>
+        </form>
+        <p id="activeProfile" role="status"></p>
+        <button class="engage-button" id="pushToggle"></button>
+        <fieldset><legend>Canais simulados</legend><label><input id="emailChannel" type="checkbox" checked> E-mail</label> <label><input id="pushChannel" type="checkbox" checked> Push</label></fieldset>
+      </section>
+      <section class="ops-card"><h2>Registro de atividades</h2><p>Envios simulados e interações registradas neste navegador.</p><ol id="eventLog" class="engage-list"></ol></section>
+    </div>
+    <section class="ops-section"><h2>Momentos do cliente</h2><p>Selecione um evento para registrar a ação e gerar uma mensagem na caixa local do perfil.</p><div id="moments" class="ops-grid"></div></section>
+    <section class="ops-section" id="experiencias"><h2>Experiências na loja</h2><p>Abra qualquer campanha no contexto da loja. A prévia ignora temporizadores e limites de frequência.</p><div id="previews" class="preview-grid"></div></section>
+    <div class="ops-grid ops-section">
+      <section class="ops-card">
+        <h2>Preços monitorados</h2><p>Leia os produtos acompanhados pelo perfil e simule uma redução de preço no cardápio.</p>
+        <label>Produto monitorado <select id="watchedProduct"></select></label>
+        <div class="campaign-choices"><button id="readWatches">Ler produtos acompanhados</button><button data-discount="10">−10%</button><button data-discount="20">−20%</button><button data-discount="30">−30%</button><button data-discount="0">Restaurar preço</button></div>
+        <p id="priceStatus" role="status"></p>
+      </section>
+      <section class="ops-card">
+        <h2>Campanha por segmento</h2><p>Gere uma prévia para uma cidade e confirme o envio local a perfis com push ativado.</p>
+        <form id="broadcastForm" class="campaign-form">
+          <label>Tipo <select name="type"><option>Aviso de entrega</option><option>Oferta relâmpago</option><option>Novidade no cardápio</option></select></label>
+          <label>Cidade <select name="city"><option>São Paulo</option><option>Curitiba</option><option>Rio de Janeiro</option><option>Belo Horizonte</option></select></label>
+          <label>Mensagem <textarea name="body" maxlength="160" placeholder="Opcional. Escreva uma mensagem para o segmento."></textarea></label>
+          <button class="engage-button">Pré-visualizar push</button>
+        </form>
+        <p id="broadcastStatus" role="status"></p><button id="broadcastSend" class="engage-button" disabled>Simular envio</button>
+      </section>
+      <section class="ops-card">
+        <h2>Caixa de entrada do cliente</h2>
+        <form id="inboxForm" class="campaign-form"><label>Chave de contato <input name="contact" required maxlength="60"></label><button class="engage-button">Consultar mensagens</button></form>
+        <button id="useProfile" class="engage-button">Usar perfil vinculado</button>
+        <ul id="inboxList" class="engage-list"></ul>
+      </section>
+    </div>
+    <p id="opsStatus" class="ops-status" role="status" hidden></p>
+  </main>
+  <script src="campaign-data.js"></script><script src="operations.js"></script>
+</body>
+</html>
