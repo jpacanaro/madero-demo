@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Verification Console | Brasa Alta</title>
+  <link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../engagement.css">
+</head>
+<body class="ops">
+  <header class="ops-header"><a href="../index.html">BRASA ALTA</a><nav><a href="../operations.html">Engagement Studio</a></nav></header>
+  <main class="ops-main">
+    <div class="ops-intro"><p class="eyebrow">Ferramentas de demonstração</p><h1>Verification Console</h1><p>Consulte a resposta HTTP dos serviços locais e confira os dados observados neste navegador.</p></div>
+    <section class="ops-card"><h2>Configuração</h2><dl id="config"></dl></section>
+    <section class="ops-card ops-section">
+      <h2>Serviços locais</h2><button class="engage-button" id="refresh">Verificar agora</button> <span id="checkedAt" role="status"></span>
+      <div class="table-scroll"><table><thead><tr><th>Serviço</th><th>Resultado</th><th>Detalhes</th></tr></thead><tbody id="services"></tbody></table></div>
+    </section>
+    <section class="ops-card ops-section"><h2>Dados neste navegador</h2><dl id="observed"></dl></section>
+    <section class="ops-card ops-section"><h2>Integrações externas</h2><p>Dengage, entrega de e-mail, push remoto e pagamentos: não configurados. Os registros observados são da demonstração local.</p></section>
+  </main>
+  <script src="../campaign-data.js"></script><script src="verify.js"></script>
+</body>
+</html>
